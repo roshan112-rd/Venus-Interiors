@@ -11,11 +11,7 @@
  * @copyright 2012 - 2014 Marcus Bointon
  * @copyright 2010 - 2012 Jim Jagielski
  * @copyright 2004 - 2009 Andy Prevost
- * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
- * @note This program is distributed in the hope that it will be useful - WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE.
- */
+
 
 /**
  * PHPMailer - PHP email creation and transport class.
@@ -3467,27 +3463,6 @@ class PHPMailer
         }
         return $this->Body;
     }
-
-    /**
-     * Convert an HTML string into plain text.
-     * This is used by msgHTML().
-     * Note - older versions of this function used a bundled advanced converter
-     * which was been removed for license reasons in #232.
-     * Example usage:
-     * <code>
-     * // Use default conversion
-     * $plain = $mail->html2text($html);
-     * // Use your own custom converter
-     * $plain = $mail->html2text($html, function($html) {
-     *     $converter = new MyHtml2text($html);
-     *     return $converter->get_text();
-     * });
-     * </code>
-     * @param string $html The HTML text to convert
-     * @param boolean|callable $advanced Any boolean value to use the internal converter,
-     *   or provide your own callable for custom conversion.
-     * @return string
-     */
     public function html2text($html, $advanced = false)
     {
         if (is_callable($advanced)) {
